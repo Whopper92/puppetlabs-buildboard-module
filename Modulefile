@@ -1,0 +1,8 @@
+name 'buildboard'
+version '0.0.1'
+source 'https://github.com/Whopper92/build-metrics-server'
+author 'William Hopper'
+license 'Apache License 2.0'
+summary 'Module to manage Build Board, a Puppet Labs internal metrics gathering server'
+description 'Module to manage Build Board, a Puppet Labs internal metrics gathering server'
+project_page 'https://github.com/Whopper92/build-metrics-server'
