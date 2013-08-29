@@ -1,32 +1,33 @@
-package { 'rubygems':
-  ensure => installed
-}
+class buildboard::dependencies {
+  package { 'rubygems':
+    ensure => latest
+  }
 
-package { 'sinatra':
-  ensure   => installed,
-  provider => 'gem',
-  require  => Package['rubygems']
-}
+  package { 'libpq-dev':
+    ensure => installed
+  }
 
-package { 'sinatra-contrib':
-  ensure   => installed,
-  provider => 'gem',
-  require  => Package['rubygems']
-}
-package { 'passenger':
-  ensure   => installed,
-  provider => 'gem',
-  require  => Package['rubygems']
-}
+  package { 'sinatra':
+    ensure   => installed,
+    provider => 'gem',
+    require  => Package['rubygems']
+  }
 
-package { 'dm-postgres-adapter':
-  ensure   => installed,
-  provider => 'gem',
-  require  => Package['rubygems']
-}
+  package { 'sinatra-contrib':
+    ensure   => installed,
+    provider => 'gem',
+    require  => Package['rubygems']
+  }
 
-package { 'datamapper':
-  ensure   => installed,
-  provider => 'gem',
-  require  => Package['rubygems']
+  package { 'datamapper':
+    ensure   => installed,
+    provider => 'gem',
+    require  => Package['rubygems'],
+  }
+
+  package { 'dm-postgres-adapter':
+    ensure   => installed,
+    provider => 'gem',
+    require  => Package['rubygems', 'datamapper'],
+  }
 }
