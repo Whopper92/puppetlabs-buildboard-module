@@ -1,4 +1,8 @@
 class buildboard::dependencies {
+  package { 'buildboard':
+    ensure => installed
+  }
+
   package { 'rubygems':
     ensure => installed
   }
@@ -8,7 +12,8 @@ class buildboard::dependencies {
   }
 
   package { 'libpq-dev':
-    ensure => installed
+    ensure => installed,
+    require  => Package['postgresql']
   }
 
   package { 'sinatra':
