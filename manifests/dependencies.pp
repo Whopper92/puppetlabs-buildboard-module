@@ -1,6 +1,10 @@
 class buildboard::dependencies {
   package { 'rubygems':
-    ensure => latest
+    ensure => installed
+  }
+
+  package { 'postgresql':
+    ensure => installed
   }
 
   package { 'libpq-dev':

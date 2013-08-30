@@ -1,6 +1,5 @@
 class buildboard {
   include apache
-  include postgresql::server
   include buildboard::dependencies
   class { 'passenger':
     passenger_version      => '4.0.14',
