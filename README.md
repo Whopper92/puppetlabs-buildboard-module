@@ -7,4 +7,3 @@ puppet-module-buildboard
 * concat
 * apache
 * passenger
-* postgresql
