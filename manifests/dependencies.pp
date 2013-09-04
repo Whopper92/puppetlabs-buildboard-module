@@ -3,6 +3,15 @@ class buildboard::dependencies {
     ensure => installed
   }
 
+  package { 'apache2':
+    ensure => installed
+  }
+
+  package { 'libapache2-mod-passenger':
+    ensure => installed,
+    require => Package['apache2']
+  }
+
   package { 'postgresql':
     ensure => installed
   }
