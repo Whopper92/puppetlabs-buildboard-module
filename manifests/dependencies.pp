@@ -3,10 +3,6 @@ class buildboard::dependencies {
     ensure => installed
   }
 
-  package { 'rubygems':
-    ensure => installed
-  }
-
   package { 'postgresql':
     ensure => installed
   }
@@ -19,24 +15,21 @@ class buildboard::dependencies {
   package { 'sinatra':
     ensure   => installed,
     provider => 'gem',
-    require  => Package['rubygems']
   }
 
   package { 'sinatra-contrib':
     ensure   => installed,
     provider => 'gem',
-    require  => Package['rubygems']
   }
 
   package { 'datamapper':
     ensure   => installed,
     provider => 'gem',
-    require  => Package['rubygems'],
   }
 
   package { 'dm-postgres-adapter':
     ensure   => installed,
     provider => 'gem',
-    require  => Package['rubygems', 'datamapper'],
+    require  => Package['datamapper'],
   }
 }

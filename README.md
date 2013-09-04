@@ -6,4 +6,3 @@ puppet-module-buildboard
 * stdlib
 * concat
 * apache
-* passenger
